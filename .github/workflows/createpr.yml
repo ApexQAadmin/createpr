@@ -21,6 +21,6 @@ jobs:
       - name: Raise Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: "auto-pr-branch"
+          branch: "auto-pr-branch-test2"
           base:  main
           title: "demo for auto pr version2"
