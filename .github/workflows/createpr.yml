@@ -6,10 +6,8 @@ on:
       -  main
 
 jobs:
-  build:
-
+  updateAuthor:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+      - name: Checking out code
+        uses: actions/checkout@v2
