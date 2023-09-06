@@ -13,8 +13,3 @@ jobs:
     steps:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
-        with:
-          title: My PR title
-          commit-message: My commit message
-          branch: my-branch-name
-          delete-branch: true
