@@ -12,12 +12,11 @@ jobs:
       - name: Checking out code
         uses: actions/checkout@v2
 
-      - name: Create Pull Request
-        id: cpr
+      - name: Extract git commit data
+        uses: rlespinasse/git-commit-data-action@v1.x
+
+      - name: Raise Pull Request
         uses: peter-evans/create-pull-request@v5
-        
-      - name: Check outputs
-        if: ${{ steps.cpr.outputs.pull-request-number }}
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+        with:
+          base:  main
+          title: "demo for auto pr"
