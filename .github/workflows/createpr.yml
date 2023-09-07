@@ -1,3 +1,15 @@
+token_githubapexqaadmin:
+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
+
+fullaccess_token_azuredevops-PrecookedSolution-CSharpOrg
+https://dev.azure.com/PrecookedSolution-CSharpOrg/_git/PrecookedSolution-CSharp
+2fplejfbneghgtshg4zsjr4ofwwhgjqg52bncj47yxuy3tultqra
+
+fullaccess_token_azuredevops-innovationpillarbkp/seleniumcsharp
+https://dev.azure.com/innovationpillarbkp/seleniumcsharp
+lxafkvrrfyr3kbenqdk6dqvnmkk7wmfltwdbvhsh4p7gugzvgyzq
+
+
 name: Create Pull Request
 
 on:
@@ -19,15 +31,28 @@ jobs:
         run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHOR
 
       - name: Raise Pull Request
-        id: demo-2
+        id: demo-1
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: "create-pull-request/patch"
+          branch: "auto-pr-branch"
           base:  main
-          title: "demo for auto PR v5"
-          committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"> 
+          title: "demo for auto PR v3"
+          commiter: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"> 
           author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"> 
           body:
             This is to show automatic PR creation
           token:  ${{ secrets.GITHUB_TOKEN }}
           delete-branch: true
+
+      - name: Approve Pull Request
+        uses: juliangruber/approve-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.APPROVER_DEMO }}
+          number: 1
+
+      - name: Merge Pull Request
+        uses: juliangruber/merge-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: 2
+          method: squash
