@@ -1,15 +1,3 @@
-token_githubapexqaadmin:
-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
-
-fullaccess_token_azuredevops-PrecookedSolution-CSharpOrg
-https://dev.azure.com/PrecookedSolution-CSharpOrg/_git/PrecookedSolution-CSharp
-2fplejfbneghgtshg4zsjr4ofwwhgjqg52bncj47yxuy3tultqra
-
-fullaccess_token_azuredevops-innovationpillarbkp/seleniumcsharp
-https://dev.azure.com/innovationpillarbkp/seleniumcsharp
-lxafkvrrfyr3kbenqdk6dqvnmkk7wmfltwdbvhsh4p7gugzvgyzq
-
-
 name: Create Pull Request
 
 on:
