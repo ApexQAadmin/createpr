@@ -31,8 +31,8 @@ jobs:
           token:  ${{ secrets.GITHUB_TOKEN }}
           delete-branch: true
 
-          name: Approve Pull Request
-          uses: juliangruber/approve-pull-request-action@v1
-          with:
+      -  name: Approve Pull Request
+         uses: juliangruber/approve-pull-request-action@v1
+         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
             number: ${{ steps.demo-1.outputs.pull-request-number}}
